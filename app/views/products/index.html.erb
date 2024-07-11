@@ -7,7 +7,18 @@
     <strong>The price is:  </strong>
     <%=number_to_currency(product.price) %>
   </p>
+  <p>   
+    <%= link_to 'Details', product_path(id: product.id)%>
+
+    <%= link_to 'Details', product_path%> 
+    <!-- this will also work -->
+
+  </p>
+
+
 
 <%end%>
+
+
 
 <p>Find me in app/views/products/index.html.erb</p>
