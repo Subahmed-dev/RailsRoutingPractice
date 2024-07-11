@@ -5,5 +5,6 @@ class ProductsController < ApplicationController
   #instance variable shared across models
 
   def show
+    @product = Product.find(params[:id])  #:id beacause this is what is used in our url
   end
 end
