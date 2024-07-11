@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get 'products/index'
-  get 'products/show'
+  get 'products', to: 'products#index', as: 'products'
+
+
+  get 'products/:id', to: 'products#show', as:'product'
+
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
