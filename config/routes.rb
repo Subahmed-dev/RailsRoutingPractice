@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-  # root to: 'product#index'
+  
 
   get 'products', to: 'products#index', as: 'products'
 
 
   get 'products/:id', to: 'products#show', as:'product', id: /\d+/
   resources :posts
-
+  root to: 'posts#index'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

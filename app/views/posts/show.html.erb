@@ -1,0 +1,14 @@
+<h1><%= @post.title %> </h1>
+<div>
+  <%= @post.body %>
+<div>
+<br>
+
+<%= link_to "Edit Post ", edit_post_path(@post) %> 
+<br><%= button_to "Delete Post", post_path(@post), method: "delete"%>
+
+
+<!-- method: :delete tells us that we want to delete this 
+post 
+data {} generate a chrome pop up
+-->
