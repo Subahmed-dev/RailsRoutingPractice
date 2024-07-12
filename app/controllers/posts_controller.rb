@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   #this will find the post id for these particular actions itself
   
   def index
-    @posts = Post.all.order("created_at DESC") #by default field is created at evrey table 
+    @posts = Post.all.order(created_at: :desc) #by default field is created at evrey table 
   end
 
   def new
@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    byebug
     @post = Post.new(post_params)
     if @post.save
       redirect_to @post  #redirect to @post show page (see routes)
@@ -19,6 +20,7 @@ class PostsController < ApplicationController
       redirect_to @post
     end
   end
+  
 
 
   def show #have to make erb file in views 
@@ -28,9 +30,11 @@ class PostsController < ApplicationController
 
 
   def edit
+    # byebug
   end 
 
   def update
+    byebug
     # @post = Post.find(params[:id]) this adds repetition nin code so make before action 
     if @post.update(post_params)  
       redirect_to @post
@@ -39,6 +43,7 @@ class PostsController < ApplicationController
     end
     
   end
+
 
   def destroy
     if @post

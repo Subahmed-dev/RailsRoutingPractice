@@ -10,6 +10,7 @@ class Post < ApplicationRecord
   private
 
   def set_title
+    byebug
     self.title = 'Default Title' if title.blank?
     self.body = 'Default Body' if body.blank?
   end
@@ -17,6 +18,5 @@ class Post < ApplicationRecord
   
   def save_title
     Rails.logger.info "Post saved!"
-    
   end
 end
