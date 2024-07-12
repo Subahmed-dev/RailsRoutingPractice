@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :update]
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
   #this will find the post id for these particular actions itself
   
   def index
@@ -41,8 +41,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    redirect_to root_path
+    if @post
+      @post.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path, alert: 'Post not found'
+    end
   end
 
 
